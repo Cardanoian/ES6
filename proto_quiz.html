@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Prototype Quiz</title>
-</head>
-<body>
-<script>
-  // Quiz 0 Make Constructor
-  function MakeStudent(name, age) {
-    this.name = name;
-    this.age = age;
-    this.sayHi = () => {
-      console.log(`Hi.\nMy name is ${this.name}.\nI'm ${this.age} years old.`);
-    }
-  }
-  let student1 = new MakeStudent('Kim', 20);
-  let student2 = new MakeStudent('Park', 21);
-  let student3 = new MakeStudent('Lee', 22);
+  </head>
+  <body>
+    <script>
+      // Quiz 0 Make Constructor
+      function MakeStudent(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayHi = () => {
+          console.log(
+            `Hi.\nMy name is ${this.name}.\nI'm ${this.age} years old.`
+          );
+        };
+      }
+      let student1 = new MakeStudent("Kim", 20);
+      let student2 = new MakeStudent("Park", 21);
+      let student3 = new MakeStudent("Lee", 22);
 
-  // Quiz 1
-  function Parent() {
-    this.name = 'Kim';
-  }
-  var a = new Parent();
+      // Quiz 1
+      function Parent() {
+        this.name = "Kim";
+      }
+      var a = new Parent();
 
-  a.__proto__.name = 'Park';
-  console.log(a.name);
+      a.__proto__.name = "Park";
+      console.log(a.name);
 
-  // Quiz 2
-  function Student(이름, 나이){
-    this.name = 이름;
-    this.age = 나이;
-  }
+      // Quiz 2
+      function Student(이름, 나이) {
+        this.name = 이름;
+        this.age = 나이;
+      }
 
-  Student.prototype.sayHi = () => {
-    console.log('안녕 나는 ' + this.name + '이야');
-  }
-  var 학생1 = new Student('Kim', 20);
+      Student.prototype.sayHi = () => {
+        console.log("안녕 나는 " + this.name + "이야");
+      };
+      var 학생1 = new Student("Kim", 20);
 
-  학생1.sayHi(); //왜 이 코드가 제대로 안나오죠?
-  // arrow function 사용이 문제
+      학생1.sayHi(); //왜 이 코드가 제대로 안나오죠?
+      // arrow function 사용이 문제
 
-  // Quiz 3
-  var arr = [1,2,3];
+      // Quiz 3
+      var arr = [1, 2, 3];
 
-  arr.__proto__.remove3 = function () {
-    let idx = this.indexOf(3);
-    if (idx > -1){
-      this.splice(idx, 1);
-    }
-  }
+      arr.__proto__.remove3 = function () {
+        let idx = this.indexOf(3);
+        if (idx > -1) {
+          this.splice(idx, 1);
+        }
+      };
 
-  arr.remove3();
+      arr.remove3();
 
-  console.log(arr); //[1,2]
-</script>
-</body>
+      console.log(arr); //[1,2]
+    </script>
+  </body>
 </html>

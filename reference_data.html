@@ -1,33 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Reference Data type</title>
-</head>
-<body>
+  </head>
+  <body>
+    <script>
+      let name1 = { name: "Kim" };
 
-<script>
-    let name1 = {name : 'Kim'};
+      console.log(name1.name);
 
-    console.log(name1.name);
+      function change1(obj) {
+        obj.name = "Park";
+      }
 
-    function change1(obj) {
-      obj.name = 'Park';
-    }
+      change1(name1);
+      console.log(name1.name);
 
+      function change2(obj) {
+        obj = { name: "Lee" };
+      }
 
-    change1(name1);
-    console.log(name1.name);
-
-    function change2(obj) {
-      obj = {name : 'Lee'};
-    }
-
-    change2(name1);
-    console.log(name1.name);
-</script>
-</body>
+      change2(name1);
+      console.log(name1.name);
+    </script>
+  </body>
 </html>

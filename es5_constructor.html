@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>ES5 Constructor</title>
+</head>
+<body>
+<script>
+  let parents = {name: "Kim", age: 50};
+  let child = Object.create(parents);
+  child.age = 15;
+
+  let grand_child = Object.create(child);
+</script>
+</body>
+</html>
