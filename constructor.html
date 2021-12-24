@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Construcor</title>
+</head>
+<body>
+<script>
+  function makeStudent(name, age){
+    this.name = name;
+    this.age = age;
+    this.sayHi = function () {
+      console.log(`My name is ${this.name}.\nI'm ${this.age} years old.`);
+    }
+  }
+
+  let student1 = new makeStudent('Kim', 15);
+  student1.sayHi();
+
+  var parents = {name:'Kim'};
+  var child = {};
+  child.__proto__ = parents;
+  console.log(child.name);
+</script>
+</body>
+</html>
