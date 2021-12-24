@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Extends & Super</title>
+</head>
+<body>
+<script>
+  class Grandpa {
+    constructor(name) {
+      this.lastname = "Kim";
+      this.name = name;
+      this.full_name = `${this.lastname} ${this.name}`;
+    }
+
+    sayHi() {
+      console.log('Hi!');
+    }
+  }
+
+  // let grandpa1 = new Grandpa('Mansu');
+  class Father extends Grandpa {
+    constructor(name) {
+      super(name);
+      this.age = 50;
+    }
+
+    sayHi() {
+      console.log("I'm father");
+      super.sayHi();
+    }
+  }
+
+  let father1 = new Father('Suil');
+</script>
+</body>
+</html>

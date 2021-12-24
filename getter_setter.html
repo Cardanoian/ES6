@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getter & Setter</title>
+</head>
+<body>
+<script>
+  class person {
+    constructor() {
+      this.name = 'Park';
+      this.age = 30;
+    }
+
+    set setAge(age) {
+      this.age = parseInt(age);
+    }
+
+    get nextAge() {
+      return this.age + 1
+    }
+  }
+
+  let person1 = new person();
+</script>
+</body>
+</html>

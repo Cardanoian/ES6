@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Quiz</title>
+</head>
+<body>
+<script>
+  // Quiz 1
+  class Dog {
+    constructor(type, color) {
+      this.type = type;
+      this.color = color;
+    }
+
+    getOlder() {
+      if (this instanceof Cat) {
+        this.age++;
+      } else {
+        alert('Not Cat!');
+      }
+    }
+  }
+
+  let dog1 = new Dog('말티즈', 'white')
+  console.log(dog1.type, dog1.color);
+
+  // Quiz 2
+  class Cat extends Dog {
+    constructor(type, color, age) {
+      super(type, color);
+      this.age = parseInt(age);
+    }
+  }
+
+  let cat1 = new Cat('코숏', 'white', 5)
+  console.log(cat1.type, cat1.color, cat1.age);
+
+  // Quiz 3
+  dog1.getOlder();
+  cat1.getOlder();
+  console.log(cat1.age);
+
+  // Quiz 4
+  class Unit {
+    constructor(att = 5, hp = 100) {
+      this.attack = att;
+      this.hp = hp;
+    }
+
+    get battlePoint() {
+      return this.attack + this.hp;
+    }
+
+    set heal(hp) {
+      this.hp += hp;
+    }
+  }
+
+  let unit1 = new Unit();
+  console.log(unit1.battlePoint);
+  unit1.heal = 50;
+  console.log(unit1.attack, unit1.hp);
+
+  // Quiz 5
+  let data = {
+    odd: [],
+    even: [],
+    setter: function (...n) {
+      n.forEach((i) => {
+        if (i % 2) {
+          this.odd.push(i);
+        } else {
+          this.even.push(i);
+        }
+      });
+    },
+    getter: function () {
+      return [...this.even, ...this.odd].sort((a, b) => {
+        return a - b;
+      });
+    }
+  }
+
+  data.setter(2, 3, 1, 4, 5);
+  console.log(data.getter())
+
+
+</script>
+</body>
+</html>

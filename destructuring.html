@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+</head>
+<body>
+<script>
+  let arr = [2, 3, 4];
+  let [a, b, c = 10] = [2, 3];
+  console.log(a, b, c);
+
+  let obj1 = {
+    name: 'Kim', age: 30
+  };
+  // let name = obj1.name;
+  // let age = obj1.age;
+
+  // let {name, age = 31} = {name: 'Kim', age: 30};
+
+  let name = 'Kim';
+  let age = 30;
+  let obj2 = {name, age};
+
+  let obj3 = {name: 'Kim', age: 30};
+
+  function func({name, age}) {
+    console.log(name, age);
+  }
+
+  func(obj3);
+
+  var [number, address] = [30, 'seoul'];
+  var {address: z, number = 20} = {address, number};
+
+  let bodyInfo = {
+    body: {
+      height: 190,
+      weight: 70
+    },
+    size: ['상의 Large', '바지 30인치']
+  };
+  let {
+    body: {
+      height: 키, weight: 몸무게
+    }, size: [상의사이즈, 하의사이즈]
+  } = bodyInfo
+  console.log(키, 몸무게, 상의사이즈, 하의사이즈)
+</script>
+</body>
+</html>
